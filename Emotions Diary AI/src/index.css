@@ -1,0 +1,162 @@
+/**
+ * =====================================
+ *         UI DESIGN SYSTEM
+ * =====================================
+ * 
+ * Project: Smart AI Diary
+ * Type: Personal Wellness & Journaling
+ * 
+ * DESIGN PHILOSOPHY
+ * -----------------
+ * Core Principle: Emotional warmth meets digital minimalism
+ * Design Style: Modern Minimal with emotional depth
+ * Emotion Goal: Safe, intimate, and inspiring
+ * 
+ * VISUAL LANGUAGE
+ * ----------------
+ * Primary Focus: Writing and reflection experience
+ * Hierarchy: Content first, then gentle guidance
+ * Whitespace: Generous breathing room for contemplation
+ * 
+ * COLOR SYSTEM
+ * -------------
+ * Inspired by peaceful moments and emotional intelligence
+ * Primary: 222 47% 11% - Deep trust and stability
+ * Secondary: 210 40% 98% - Clean canvas for thoughts
+ * Accent: 262 83% 58% - Creativity and insight spark
+ * Success: 142 76% 36% - Growth and positive emotions
+ * Warning: 48 96% 53% - Gentle alerts and highlights
+ * Destructive: 0 84% 60% - Rare use, careful consideration
+ * 
+ * TYPOGRAPHY
+ * ----------
+ * Display: Inter for headers - clear and welcoming
+ * Body: Inter for content - comfortable reading
+ * Scale: Generous sizing for readability and warmth
+ * 
+ * INTERACTIONS
+ * ------------
+ * Feedback: Gentle, encouraging, never jarring
+ * Transitions: 250ms ease-out - thoughtful pacing
+ * States: Complete emotional support coverage
+ * 
+ * ACCESSIBILITY
+ * -------------
+ * Contrast: WCAG AA+ - emotional safety requires clarity
+ * Focus: Warm, clear indicators
+ * Motion: Respects user preferences and comfort
+ * ====================================
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 262 83% 58%;
+    --radius: 0.75rem;
+    --chart-1: 262 83% 58%;
+    --chart-2: 142 76% 36%;
+    --chart-3: 48 96% 53%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+
+    /* Diary-specific color variables */
+    --diary-warmth: 35 100% 95%;
+    --diary-inspiration: 262 83% 58%;
+    --diary-growth: 142 76% 36%;
+    --diary-reflection: 215 25% 27%;
+    --diary-calm: 210 30% 93%;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 213 31% 91%;
+    --muted: 215 28% 17%;
+    --muted-foreground: 217 11% 65%;
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
+    --ring: 262 83% 58%;
+
+    --diary-warmth: 35 50% 8%;
+    --diary-inspiration: 262 83% 58%;
+    --diary-growth: 142 76% 36%;
+    --diary-reflection: 213 31% 91%;
+    --diary-calm: 215 25% 12%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-['Inter',sans-serif];
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .diary-gradient {
+    background: linear-gradient(135deg, hsl(var(--diary-warmth)) 0%, hsl(var(--background)) 100%);
+  }
+  
+  .writing-focus {
+    @apply ring-2 ring-accent/20 border-accent/30 transition-all duration-300;
+  }
+  
+  .emotional-pulse {
+    animation: emotional-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes emotional-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .7;
+    }
+  }
+  
+  .gentle-shadow {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  }
+  
+  .warm-glow {
+    box-shadow: 0 0 20px rgba(262, 83%, 58%, 0.1);
+  }
+}
